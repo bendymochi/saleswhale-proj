@@ -1,23 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import Sidebar from './components/Sidebar';
+import Header from './components/Header';
+import Activity from './components/Activity';
+import Results from './components/Results';
+import Card from './components/Card';
+import Tab from './components/Tab';
 
 function App() {
+  const [activities, setActivities] = useState([]);
+  const [teams, setTeams] = useState([]);
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    axios
+      .get("/db/info.json")
+      .then((res) => {
+        setActivities(res.data.activities)
+        setTeams(res.data.teams)
+        setUser(res.data.current_user)
+      })
+      .catch((err) => console.log(err));
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="flex">
+        <Sidebar />
+        <div className="flex flex-wrap">
+          <Header user={user} />
+          <Tab />
+          <div className="flex flex-nowrap dark-bg w-full">
+            <Results teams={teams}/>
+            <Activity activities={activities} />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

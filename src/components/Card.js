@@ -8,26 +8,28 @@ export default function Card(props) {
   const { name, description, image, campaign, lead, favorited, created } = props;
 
   return (
-    <div className="w-80">
-      <div className="border-solid border-2 border-gray-200 p-3 relative">
-        <div className="flex">
-          <img src={image} alt="" className="h-10 w-10 rounded"/>
-          <div className="px-2">
-            <h3 className="font-semibold">{name}</h3>
-            <p className="text-xs">Created {created}</p>
+    <div className="card">
+      <div className="card-layout">
+        <div className="card-flex">
+          <img src={image} alt="" className="card-image"/>
+          <div className="card-header">
+            <h3 className="card-name">{name}</h3>
+            <p className="card-create">Created {created}</p>
           </div>
-          <div className="absolute right-0 pr-3"><img src={ favorited ? starDefault : starActive } alt="" /></div>
+          <div className="favorite-icon"><img src={ favorited ? starDefault : starActive } alt="" /></div>
         </div>
-        <div className="py-3 text-sm">{description}</div>
-        <div className="border border-y-1 absolute w-full right-0"></div>
-        <div className="flex text-center py-4">
-          <div className="flex flex-wrap text-sm">
+        <div className="card-padding">
+          <div className="card-description">{description}</div>
+        </div>
+        <div className="card-border"></div>
+        <div className="card-details">
+          <div className="card-flex">
             <img src={convoIcon} alt="" />
-            <p className="mx-1">{campaign} Campaigns</p>
+            <p className="card-sub">{campaign} Campaigns</p>
           </div>
-          <div className="flex flex-wrap text-sm px-1">
+          <div className="card-flex">
             <img src={leadIcon} alt="" />
-            <p className="mx-1">{lead} Leads</p>
+            <p className="card-sub">{lead} Leads</p>
           </div>
         </div>
       </div>

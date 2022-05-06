@@ -41,7 +41,8 @@
       "campaigns_count": 16,
       "leads_count": 2000,
       "is_favorited": false,
-      "is_archived": false
+      "is_archived": false,
+      "created_at": "4 August 2017"
     },
     {
       "id": 5,
@@ -51,7 +52,8 @@
       "campaigns_count": 12,
       "leads_count": 1500,
       "is_favorited": false,
-      "is_archived": false
+      "is_archived": false,
+      "created_at": "3 August 2017"
     },
     {
       "id": 6,
@@ -61,7 +63,8 @@
       "campaigns_count": 13,
       "leads_count": 10000,
       "is_favorited": true,
-      "is_archived": false
+      "is_archived": false,
+      "created_at": "4 Nov 2017"
     },
     {
       "id": 7,
@@ -71,7 +74,8 @@
       "campaigns_count": 17,
       "leads_count": 1200,
       "is_favorited": true,
-      "is_archived": false
+      "is_archived": false,
+      "created_at": "15 August 2017"
     },
     {
       "id": 8,
@@ -81,7 +85,8 @@
       "campaigns_count": 10,
       "leads_count": 3200,
       "is_favorited": false,
-      "is_archived": true
+      "is_archived": true,
+      "created_at": "28 October 2017"
     },
     {
       "id": 9,
@@ -91,7 +96,8 @@
       "campaigns_count": 23,
       "leads_count": 2000,
       "is_favorited": false,
-      "is_archived": true
+      "is_archived": true,
+      "created_at": "28 October 2017"
     }
   ],
   "activities": [

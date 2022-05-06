@@ -1,0 +1,37 @@
+.content {
+  display: flex;
+  padding: 20px 30px;
+  align-items: center;
+  margin-left: auto;
+  background: #FFFFFF;
+}
+
+.header {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 36px;
+  padding: 0px 10px;
+  color: #1A1919;
+}
+
+.end {
+  margin-left: auto;
+}
+
+.button {
+  width: 189px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background: var(--button);
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.spacing {
+  padding: 0px 15px;
+  font-weight: 600;
+}

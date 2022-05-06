@@ -1,35 +1,39 @@
-import React, { useState} from 'react';
+import React from 'react';
 import convoIcon from '../assets/icon-conversations-small.svg'
 import leadIcon from '../assets/icon-leads-small.svg'
 import starDefault from '../assets/star-default.svg'
 import starActive from '../assets/star-active.svg'
+import styles from '../styles/card.module.css'
 
 export default function Card(props) {
-  const { name, description, image, campaign, lead, favorited, created } = props;
+  const { name, description, image, campaign, lead, favorited, created, archived } = props;
 
   return (
-    <div className="card">
-      <div className="card-layout">
-        <div className="card-flex">
-          <img src={image} alt="" className="card-image"/>
-          <div className="card-header">
-            <h3 className="card-name">{name}</h3>
-            <p className="card-create">Created {created}</p>
+    <div
+      className={ archived ? styles.archive : styles.card}
+    >
+      <div className={styles.layout}>
+        <div className={styles.flexbox}>
+          <img src={image} alt="" className={styles.image}/>
+          <div className={styles.header}>
+            <div className={styles.name}>{name}</div>
+            <div className={styles.create}>{ archived ? 'Archived' : 'Created'} {created}</div>
           </div>
-          <div className="favorite-icon"><img src={ favorited ? starDefault : starActive } alt="" /></div>
+          <div className={styles.favorite}>
+            <img src={ favorited ? starActive : starDefault } alt="" />
+          </div>
         </div>
-        <div className="card-padding">
-          <div className="card-description">{description}</div>
+        <div className={styles.padding}>
+          <div className={styles.description}>{description}</div>
         </div>
-        <div className="card-border"></div>
-        <div className="card-details">
-          <div className="card-flex">
+      </div>
+      <div className={styles.details}>
+        <div className={styles.spacing}>
+          <div className={styles.flexbox}>
             <img src={convoIcon} alt="" />
-            <p className="card-sub">{campaign} Campaigns</p>
-          </div>
-          <div className="card-flex">
+            <p className={styles.sub}>{campaign.toLocaleString()} Campaigns</p>
             <img src={leadIcon} alt="" />
-            <p className="card-sub">{lead} Leads</p>
+            <p className={styles.sub}>{lead.toLocaleString()} Leads</p>
           </div>
         </div>
       </div>

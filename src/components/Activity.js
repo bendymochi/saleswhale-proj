@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import styles from '../styles/activity.module.css'
 
 export default function Activity(props) {
   const [activities, setActivities] = useState([]);
@@ -19,11 +20,11 @@ export default function Activity(props) {
       return (
         activities.map((activity) => {
           return (
-            <div className="activity-container" key={activity.id}>
+            <div className={styles.container} key={activity.id}>
               <img src={activity.person.avatar} alt="" className="avatar" />
-              <div className="activity-font">
-                <span className="activity-bold">{activity.person.name} </span>{activity.action} <span className="activity-bold">{activity.target}.</span>
-                <div className="activity-create">{activity.created_at}</div>
+              <div className={styles.font}>
+                <span className="font-bold">{activity.person.name} </span>{activity.action} <span className="font-bold">{activity.target}.</span>
+                <div className={styles.creation}>{activity.created_at}</div>
               </div>
             </div>
           )
@@ -35,11 +36,11 @@ export default function Activity(props) {
   }
 
   return (
-    <div className="activity-layout">
-      <div className="results-layout">
-        <h1 className="activity-header">Activity</h1>
-        <div className="activity-border"></div>
-        <div className="activity-padding">
+    <div className={styles.layout}>
+      <div className={styles.shadow}>
+        <div className={styles.header}>Activity</div>
+        <div className={styles.border}></div>
+        <div className={styles.padding}>
           {displayActivities(activities)}
         </div>
       </div>
